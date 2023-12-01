@@ -26,14 +26,14 @@
     "type": "git",
     "url": "git+https://github.com/tornabene/python-template.git"
   },
-  "bugs": {
+  "bugs": {v
     "url": "https://github.com/tornabene/python-template/issues"
   },
   "homepage": "https://github.com/tornabene/python-template#readme",
   "dependencies": {
     "@asyncapi/generator-filters": "^2.1.0",
     "js-yaml": "^3.13.1",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15" 
   },
   "devDependencies": {
     "@asyncapi/generator": "^1.9.14",
