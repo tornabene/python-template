@@ -36,13 +36,15 @@
     "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "@semantic-release/commit-analyzer": "^9.0.2",
-    "@semantic-release/github": "^8.0.7",
-    "@semantic-release/npm": "^10.0.3",
-    "@semantic-release/release-notes-generator": "^9.0.1",
-    "conventional-changelog-conventionalcommits": "^4.2.3",
-    "eslint": "^6.8.0",
-    "semantic-release": "^21.0.1"
+    "@asyncapi/generator": "^1.9.14",
+		"@semantic-release/commit-analyzer": "^9.0.2",
+		"@semantic-release/github": "^8.1.0",
+		"@semantic-release/npm": "^9.0.2",
+		"@semantic-release/release-notes-generator": "^10.0.3",
+		"conventional-changelog-conventionalcommits": "^4.2.3",
+		"eslint": "^7.0.0",
+		"semantic-release": "^19.0.3"
+    
   },
   "release": {
     "branches": [
