@@ -1,6 +1,6 @@
 {
-  "name": "@tornabene.org/python-template",
-  "version": "0.2.13",
+  "name": "@tornabene/python-template",
+  "version": "0.2.14",
   "description": "Python Paho template for the AsyncAPI generator.",
   "scripts": {
     "release": "semantic-release",
