@@ -26,7 +26,7 @@
     "type": "git",
     "url": "git+https://github.com/tornabene/python-template.git"
   },
-  "bugs": {v
+  "bugs": {
     "url": "https://github.com/tornabene/python-template/issues"
   },
   "homepage": "https://github.com/tornabene/python-template#readme",
