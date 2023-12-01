@@ -22,7 +22,7 @@
 {%- for name, prop in properties -%}
 {%- set typeInfo = [name, prop] | getTypeInfo -%}
 ,
-{{ indent4 }}{{ typeInfo.pythonName }}{{ ": " + typeInfo.pythonType if typeInfo.pythonType else "" }}
+{{ indent4 }}{{ typeInfo.pythonName }}{{ ": " + typeInfo.pythonType +"=None" if typeInfo.pythonType else "" }}
 {%- endfor -%}
 ):
 {%- for name, prop in properties -%}

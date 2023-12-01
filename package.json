@@ -1,5 +1,5 @@
 {
-  "name": "@asyncapi/python-paho-template",
+  "name": "@tornabene.org/python-template",
   "version": "0.2.13",
   "description": "Python Paho template for the AsyncAPI generator.",
   "scripts": {
@@ -24,12 +24,12 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/asyncapi/python-paho-template.git"
+    "url": "git+https://github.com/tornabene/python-template.git"
   },
   "bugs": {
-    "url": "https://github.com/asyncapi/python-paho-template/issues"
+    "url": "https://github.com/tornabene/python-template/issues"
   },
-  "homepage": "https://github.com/asyncapi/python-paho-template#readme",
+  "homepage": "https://github.com/tornabene/python-template#readme",
   "dependencies": {
     "@asyncapi/generator-filters": "^2.1.0",
     "js-yaml": "^3.13.1",
