@@ -1,5 +1,5 @@
 {
-  "name": "@tornabene.org/python-template",
+  "name": "@tornabene.org/python-paho-template",
   "version": "0.2.15",
   "description": "Python Paho template for the AsyncAPI generator.",
   "scripts": {
