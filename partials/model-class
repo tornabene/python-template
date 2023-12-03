@@ -22,12 +22,19 @@
 {%- for name, prop in properties -%}
 {%- set typeInfo = [name, prop] | getTypeInfo -%}
 ,
-{{ indent4 }}{{ typeInfo.pythonName }}{{ ": " + typeInfo.pythonType  if typeInfo.pythonType else "" "" if prop.required() else " = None" }}
+{{ indent4 }}{{ typeInfo.pythonName }}{{ ": " + typeInfo.pythonType  if typeInfo.pythonType else ""    }}{{ ""  if typeInfo.pythonRequired else " = None"    }} 
 {%- endfor -%}
 ):
 {%- for name, prop in properties -%}
 {%- set typeInfo = [name, prop] | getTypeInfo %}
-{{ indent3 }}self.{{ typeInfo.pythonName }} = {{ typeInfo.pythonName }}
+{%- if typeInfo.generalType == 'array'  and typeInfo.recursive  -%}
+{{ indent3 }}
+{{ indent3 }}self.{{  typeInfo.pythonName }} = []
+{{ indent3 }}for key in  {{  typeInfo.pythonName }}:
+{{ indent3 }}  self.{{typeInfo.pythonName}}.append( self.{{typeInfo.innerType}}(**key) )
+{%- else %}
+{{ indent3 }}self.{{ typeInfo.pythonName }} = {{  " self."+typeInfo.pythonType+"(**"+typeInfo.pythonName+")"  if typeInfo.generalType == 'object'  else typeInfo.pythonName }}
+{%- endif %}
 {%- else %}
 {{ indent3 }}pass
 {%- endfor %}

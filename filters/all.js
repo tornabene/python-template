@@ -139,6 +139,10 @@ function determineType(name, property) {
   // For schema properties, type is a function.
   let type = property.type;
 
+
+  // }
+  // console.log(property)
+
   if (typeof type == "function") {
     type = property.type();
   }
@@ -146,6 +150,22 @@ function determineType(name, property) {
   // If a schema has a property that is a ref to another schema,
   // the type is undefined, and the title gives the title of the referenced schema.
   let ret = {};
+
+
+  // console.log(name)
+  if (property?._meta?.parent?._json?.required !== undefined) {
+
+    const requiredList = Array.from(property._meta.parent._json.required);
+    const required = requiredList.indexOf(name);
+    // console.log(requiredList )
+    // console.log(name + ":" + required)
+    if (required > -1) {
+      ret.pythonRequired = true;
+    }
+  }
+
+
+
   ret.properties = property.properties(); // can change if it's an embedded type.
   ret.pythonName = templateUtil.getIdentifierName(name);
   //console.log(name + ": " + type);
@@ -170,6 +190,9 @@ function determineType(name, property) {
     ret.type = property.ext('x-parser-schema-id');
     ret.generalType = 'objectRef';
     ret.pythonType = ret.type
+
+
+
 
     if (!ret.type) {
       throw new Error("Can't determine the type of property " + name);
@@ -206,6 +229,7 @@ function determineType(name, property) {
     ret.type = itemsType
     ret.innerType = itemsType
     ret.pythonType = "Sequence[" + itemsType + "]"
+ 
     //ret = _.upperFirst(itemsType) + "[]";
   } else if (type === 'object') {
     ret.recursive = true;
@@ -219,7 +243,7 @@ function determineType(name, property) {
     ret.type = type;
     ret.innerType = ret.type
   }
-
+  // ret.log =JSON.stringify(ret);
   //console.log("determineType:")
   //console.log(ret)
   return ret;
