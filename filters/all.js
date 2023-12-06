@@ -285,7 +285,7 @@ function getImports(schema) {
         let ref = itemsType.ext('x-parser-schema-id');
         if (ref && !ref.includes('anonymous')) {
           let importName = _.lowerFirst(ref);
-          ret += `from ${importName} import ${ref}\n`
+          ret += `from .${importName} import ${ref}\n`
         }
       } else if (type === 'object') {
         ret += getImports(property);
